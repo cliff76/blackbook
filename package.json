@@ -1,0 +1,23 @@
+{
+  "name": "blackbook",
+  "version": "1.0.0",
+  "description": "A social network experiment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cliff76/blackbook.git"
+  },
+  "keywords": [
+    "social",
+    "network"
+  ],
+  "author": "Clifton Craig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cliff76/blackbook/issues"
+  },
+  "homepage": "https://github.com/cliff76/blackbook#readme"
+}
