@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/cliff76/blackbook/issues"
   },
-  "homepage": "https://github.com/cliff76/blackbook#readme"
+  "homepage": "https://github.com/cliff76/blackbook#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
