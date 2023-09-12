@@ -1,19 +1,15 @@
 package com.cliftoncraig.blackbook;
 
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.cliftoncraig.blackbook.databinding.ListViewItemBinding;
 
 public class MainAdapter extends BaseAdapter {
-    private final ListViewItemBinding binding;
     private MainActivity activity;
     private String[] items;
     private Animation animation;
@@ -27,7 +23,6 @@ public class MainAdapter extends BaseAdapter {
     public MainAdapter(MainActivity activity, String[] items) {
         this.activity = activity;
         this.items = items;
-        this.binding = ListViewItemBinding.inflate(LayoutInflater.from(activity));
         animation = AnimationUtils.loadAnimation(activity,R.anim.animation);
     }
 
@@ -52,13 +47,11 @@ public class MainAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(activity).inflate(R.layout.list_view_item, parent, false);
-        LinearLayout background = view.findViewById(R.id.itemBackground);
-        Drawable drawable = activity.getDrawable(backgrounds[getRandom(8)]);
-        background.setBackground(drawable);
-        TextView textView = view.findViewById(R.id.itemText);
-        textView.setText(items[position]);
-        textView.setAnimation(animation);
+        ListViewItemBinding binding = ListViewItemBinding.inflate(LayoutInflater.from(activity));
+        View view = binding.getRoot();
+        binding.itemBackground.setBackground(activity.getDrawable(backgrounds[getRandom(8)]));
+        binding.itemText.setText(items[position]);
+        binding.itemText.setAnimation(animation);
         return view;
     }
 }
